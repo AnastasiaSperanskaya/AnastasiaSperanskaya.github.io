@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</header>
+
+<div class="main">
+
+    <div class="image">
+        <img src="../imag/book.jpg">
+    </div>
+
+    <div id="container">
+        <form class="mainform" >
+            <p class="name">
+                <input type="text" name="name" value="Имя автора" onblur="if(this.value.length == 0) this.value = 'Имя автора'" onfocus="if(this.value == 'Имя автора') this.value = '' "/>
+                <label for="name">Имя</label>
+            </p>
+
+            <p class="email">
+                <input type="text" name="email" value="name@example.com" onblur="if(this.value.length == 0) this.value = 'name@example.com'" onfocus="if(this.value == 'name@example.com') this.value = '' " />
+                <label for="email" >E-Mail</label>
+            </p>
+            <p class="msg">
+                <textarea name="msg" onblur="if(this.value.length == 0) this.value = 'Текст сообщения'" onfocus="if(this.value == 'Текст сообщения') this.value=''">Текст сообщения</textarea>
+            </p>
+            <p class="send" >
+                <input type="submit" value="Отправить"  />
+            </p>
+        </form>
+    </div>
+
+</div>
+</body>

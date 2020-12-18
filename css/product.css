@@ -1,0 +1,73 @@
+.iconblock-8 {
+    margin: 10px 0;
+    padding-right:10px;
+}
+.iconblock-8 .icon {
+    float: right;
+    text-align: center;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 64px;
+    height: 80px;
+    background: #337AB7;
+    color: #fff;
+    transition: all .3s;
+    transform: skew(-20deg);
+    margin-left:30px;
+}
+.iconblock-8 .icon i,
+.iconblock-8 .icon img {
+    font-size: 32px;
+    height:32px;
+    width:32px;
+    color: #fff;
+    padding-top:24px;
+    z-index:1;
+    position: relative;
+    box-sizing: content-box;
+    transform: skew(20deg);
+}
+.iconblock-8:hover .icon {
+    top: 0;
+    left: 0;
+}
+.iconblock-8:hover .icon {
+    box-shadow: 8px 8px #BDE1FF;
+}
+.iconblock-8 .block {
+    overflow: hidden;
+    text-align: right;
+}
+.iconblock-8 h3 {
+    transition: all 0.7s ease 0s;
+    color: #337AB7;
+    font-size:20px;
+    margin:10px 0;
+}
+.iconblock-8:hover h3 {
+    color: #000;
+}
+
+.textcols {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.textcols-row {
+    display: table-row;
+}
+
+.textcols-item {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 0;
+    border-radius: 10px; /* Радиус скругления */
+    background: #ff9000;
+}
+
+.image{
+    text-align: center;
+}
