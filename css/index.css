@@ -44,7 +44,6 @@ body{
 
 .third_column {
     width: 500px;
-    border: 4px double black; /* Параметры границы */
 }
 
 .info {
@@ -229,3 +228,9 @@ body{
     width: auto;
   }
 
+.assorti-image {
+    margin-right: 15px;
+    border-radius: 10px; 
+    height: 150px;
+    width: auto;
+  }
