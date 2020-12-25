@@ -40,7 +40,6 @@ body{
 
 .second_column {
     width: 800px;
-    border: 4px double black; /* Параметры границы */
 }
 
 .third_column {
@@ -216,12 +215,12 @@ body{
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    background: rgba(99,72,50, 0.3);
     border-radius: 10px; 
     align-items: center;
     justify-content: center;
     width: 100%;
     height: auto;
+    padding-right: 15px;
   }
 
   .product-image {
