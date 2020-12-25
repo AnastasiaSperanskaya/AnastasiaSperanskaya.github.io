@@ -4,7 +4,7 @@
 
 html{
     font-family: 'Montserrat', sans-serif;
-    background-image:url('../imag/background.jpg');
+    background: linear-gradient(#ffffff,#ece0d1, #dbc1ac, #967259);
     background-size: cover;
 }
 
@@ -19,10 +19,18 @@ body{
 }
 
 .welcoming {
-    height: 800px;
+    height: 920px;
     overflow: auto;
     background-image: url('../img/coffee--wallpaper.jpg');
     background-size: cover;
+    clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 10vw)
+    );
+    /* border-bottom-left-radius: 30% 10%;
+    border-bottom-right-radius: 30% 10%; */
 }
 
 .first_column {
@@ -40,7 +48,7 @@ body{
 
 .info {
     /* width: 1920px; */
-    height: 960px;
+    height: 920px;
     display: flex;
     justify-content: space-between;
 }
@@ -145,4 +153,3 @@ img{
     transition:transform 0.2s;
     z-index:10;
   }
-
