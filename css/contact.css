@@ -10,6 +10,28 @@ html{
     height: 100%;
 }
 
+.contact {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+
+}
+
+.map {
+	margin-bottom: 10px;
+	align-items: right;
+	
+}
+
+input, select {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255);
+}
+
+textarea {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255);
+}
+
 input[type="text"] {
     font-family: 'Montserrat', sans-serif;
 }
@@ -66,13 +88,37 @@ body{
     border-radius: 6px;
 }
 
+.mainform {
+    height: 448px;
+    display: flex;
+    flex-direction: column;
+	margin-right: 50px;
+	margin-left: 50px;	
+	color: black;
+	border: 2px solid rgba(99,72,50, 0.3);
+    align-items: center;
+    background: rgba(99,72,50, 0.3);
+    border-radius: 10px;
+    padding-right: 20px;
+}
+
+.msg {
+	margin-left: 10px;
+	margin-right:10px;
+}
+
+.send {
+	margin-left: 10px;
+}
+
+
 .container {
     margin: 0 auto;
     border: 3px solid #EEEEEE;
     width: 800px;
     -webkit-birder-radius: 6px;
     -moz-border-radius: 6px;
-    border-radius: 6px;
+    border-radius: 6px;	
 }
 
 textarea {
@@ -83,25 +129,19 @@ textarea {
 .send input {
     width: auto;
     margin-bottom: 10px;
-    border: 2px solid #E0E0F3;
-    background-color: #E5E5F8;
+    background-color: white;
+	color: black;
 }
 
 p label {
     margin-left: 10px;
     font-style: italic;
-    color: #c0c0c0;
+    color: #000000;
 }
 
 .name input {
     margin-top: 10px;
     -webkit-text-fill-color: black;
-}
-
-p label {
-    margin-left: 10px;
-    font-style: italic;
-    color: #c0c0c0;
 }
 
 .name input {
@@ -126,7 +166,6 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   }
   
 #footer {
-    position: absolute;
     bottom: 0;
     width: 100%;
     height: auto;
