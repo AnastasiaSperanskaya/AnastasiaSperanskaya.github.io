@@ -76,7 +76,7 @@ body{
 
 .navbar a:hover {
     background: #ddd;
-    color: black;
+    /* color: black; */
 }
 
 .form-group {
@@ -94,8 +94,8 @@ body{
     flex-direction: column;
 	margin-right: 50px;
 	margin-left: 50px;	
-	color: black;
-	border: 2px solid rgba(99,72,50, 0.3);
+	/* color: black; */
+	border: 2px;
     align-items: center;
     background: rgba(99,72,50, 0.3);
     border-radius: 10px;
@@ -130,26 +130,22 @@ textarea {
     width: auto;
     margin-bottom: 10px;
     background-color: white;
-	color: black;
+	/* color: black; */
 }
 
 p label {
     margin-left: 10px;
     font-style: italic;
-    color: #000000;
+    /* color: #000000; */
 }
 
 .name input {
     margin-top: 10px;
-    -webkit-text-fill-color: black;
+    /* -webkit-text-fill-color: black; */
 }
 
 .name input {
     margin-top: 10px;
-}
-
-input:hover, textarea:hover, input:focus, textarea:focus {
-    border-color: #A0A0A0;
 }
 
 .send input:hover {
