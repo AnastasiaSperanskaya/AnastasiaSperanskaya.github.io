@@ -4,8 +4,24 @@
 
 html{
     font-family: 'Montserrat', sans-serif;
-    background-image:url('../imag/background.jpg');
+    background: linear-gradient(#ffffff,#ece0d1, #dbc1ac, #967259);
     background-size: cover;
+    margin: 0;
+    height: 100%;
+}
+
+input[type="text"] {
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type="submit"] {
+    font-family: 'Montserrat', sans-serif;
+}
+
+select {
+    -webkit-appearance: none;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .main {
@@ -68,7 +84,6 @@ textarea {
     width: auto;
     margin-bottom: 10px;
     border: 2px solid #E0E0F3;
-    font: Verdana, Geneva, sans-serif;
     background-color: #E5E5F8;
 }
 
@@ -104,3 +119,15 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 .image{
     text-align: center;
 }
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
