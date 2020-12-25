@@ -8,6 +8,10 @@ html{
     background-size: cover;
 }
 
+.main {
+    margin-top: 50px;
+}
+
 body{
     margin:0;
     height:100%;
@@ -62,10 +66,6 @@ body{
 .navbar a:hover {
     background: #ddd;
     color: black;
-}
-
-.main {
-    margin-top: 50px;
 }
 
 .gallery {

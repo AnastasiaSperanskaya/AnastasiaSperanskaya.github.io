@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap');
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    background-image:url('../imag/background.jpg');
+    background-size: cover;
+}
+
+.main {
+    margin-top: 50px;
+}
+
+body{
+    margin:0;
+    height:100%;
+    background-size:100%100%;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 10
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.form-group {
+    margin: 0 auto;
+    border: 3px solid #EEEEEE;
+    width: 800px;
+    -webkit-birder-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
 .container {
     margin: 0 auto;
     border: 3px solid #EEEEEE;
@@ -20,7 +72,6 @@ textarea {
     background-color: #E5E5F8;
 }
 
-CSS
 p label {
     margin-left: 10px;
     font-style: italic;
@@ -29,6 +80,7 @@ p label {
 
 .name input {
     margin-top: 10px;
+    -webkit-text-fill-color: black;
 }
 
 p label {
