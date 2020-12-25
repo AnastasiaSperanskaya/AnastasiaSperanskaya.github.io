@@ -15,21 +15,31 @@
 
     <div class="welcoming">
         <div class="gallery">
-            <div class="clipped-border">
-                <img src="/img/latte.png" id="clipped">
-              </div>
-              <div class="clipped-border">
-                <img src="/img/espresso.png" id="clipped">
-              </div>
-              <div class="clipped-border">
-                <img src="/img/americano.png" id="clipped">
-              </div>
-                <div class="clipped-border">
-                <img src="/img/frappe.png" id="clipped">
-              </div>
-                <div class="clipped-border">
-                <img src="/img/takeaway.png" id="clipped">
-              </div>
+            
+            <p class="gallery__photo-full">
+                <div class="clipped-border first" >
+                    <img class="full-photo" src="/img/latte.png" id="clipped">
+                </div>
+            </p>
+
+            <p class="gallery__photo-previews"></p>
+                <div class="clipped-border second gallery__photo-preview">
+                    <img src="/img/espresso.png" id="clipped">
+                </div>
+                <div class="clipped-border third gallery__photo-preview">
+                    <img src="/img/latte.png" id="clipped">
+                </div>
+                <div class="clipped-border fourth gallery__photo-preview">
+                    <img src="/img/frappe.png" id="clipped">
+                </div>
+                <div class="clipped-border fifth gallery__photo-preview">
+                    <img src="/img/takeaway.png" id="clipped">
+                </div>
+                <div class="clipped-border sixth gallery__photo-preview">
+                    <img src="/img/americano.png" id="clipped">
+                </div>
+            </p>
+
         </div>
     </div>
     <div class="info">
@@ -43,5 +53,6 @@
             stock
         </div>
     </div>
+    <script src="js/gallery.js"></script>
 </body>
 </html>

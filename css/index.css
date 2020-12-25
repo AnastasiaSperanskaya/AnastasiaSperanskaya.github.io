@@ -47,6 +47,7 @@ body{
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    z-index: 10
 }
 
 .navbar a {
@@ -70,9 +71,9 @@ body{
 .gallery {
     margin-top: 80px;
     margin-left: 50px;
+    margin-right: 100px;
     width: 600px;
     height: 500px;
-    border: 4px double black; /* Параметры границы */
     padding: 5px;
 }
 
@@ -90,36 +91,53 @@ img{
      width: 100%;
      position:absolute;
   }
-  
-  .clipped-border:nth-child(1){
-    height: 200px;
-    width: 200px;
-  }
 
-  .clipped-border:nth-child(2){
-    top:196px;
-    left:118px;
-    height: 200px;
-    width: 200px;
+  .button {
+    display:block;
+    border-radius: 50%;
+    border-style: none;
   }
   
-  .clipped-border:nth-child(3){
-    left:235px;
+  .first{
+    margin-left:15%;
+    margin-top: 2%;
     height: 300px;
     width: 300px;
   }
-  
-  .clipped-border:nth-child(4){
-    top:196px;
-    left:353px;
+
+  .second{
+    margin-top:15%;
+    margin-left:3%;
     height: 200px;
     width: 200px;
   }
   
-  .clipped-border:nth-child(5){
-    left:470px;
-    height: 200px;
-    width: 200px;
+  .third{
+    margin-top: 5%;
+    height: 130px;
+    width: 130px;
+    margin-left: 5%;
+  }
+  
+  .fourth{
+    margin-top:23%;
+    margin-left:14%;
+    height: 250px;
+    width: 250px;
+  }
+  
+  .fifth{
+    margin-top:20%;
+    margin-left:30%;
+    height: 100px;
+    width: 100px;
+  }
+
+  .sixth{
+    margin-top:10%;
+    margin-left:35%;
+    height: 170px;
+    width: 170px;
   }
 
   .clipped-border:hover{
