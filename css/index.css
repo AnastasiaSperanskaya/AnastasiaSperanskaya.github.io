@@ -34,23 +34,76 @@ body{
 }
 
 .first_column {
-    width: 300px;
+    width: 600px;
     /* justify-content: center; */
 }
 
 .second_column {
-    width: 900px;
+    width: 800px;
+    border: 4px double black; /* Параметры границы */
 }
 
 .third_column {
-    width: 600px;
+    width: 500px;
+    border: 4px double black; /* Параметры границы */
 }
 
 .info {
     /* width: 1920px; */
     height: 920px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.info-item {
+    margin: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.review {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    background: rgba(99,72,50, 0.3);
+    border-radius: 10px; 
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.text {
+    width: 200px;
+    margin-right: 15px;
+}
+
+.photo {
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+}
+
+.profile {
+    border-radius: 50%;
+}
+
+.review-text{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.name{
+  font-size: 12px;
+  line-height: 18px;
+  color: #38220f;
 }
 
 .navbar {
@@ -153,3 +206,4 @@ img{
     transition:transform 0.2s;
     z-index:10;
   }
+
