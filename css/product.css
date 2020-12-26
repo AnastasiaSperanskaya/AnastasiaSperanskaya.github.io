@@ -18,48 +18,6 @@ body{
     margin-top: 50px;
 }
 
-.products {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    display: flex;
-	flex-wrap:wrap;
-    margin-left: 30px;
-}
-
-.products_item {
-    width: 30%;
-	padding: 5px;
-	margin: 10px;
-    background-color: rgba(99,72,50, 0.3);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-}
-
-.products_item h2 {
-	text-align: left;
-    margin-left: 10px;
-    font-size: 18px;
-    font-weight: normal;
-}
-
-.products_item img {
-    float: left;
-    border-radius: 10px;
-    width: 120px;
-    height: auto;
-    margin: 15px;
-}
-
-.send {
-	margin-left: 10px;
-	width: auto;
-    margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: black;
-    border-radius: 3px;
-}
-
 .navbar {
     overflow: hidden;
     background-color: black;
@@ -83,79 +41,6 @@ body{
     color: black;
 }
 
-.iconblock-8 {
-    margin: 10px 0;
-    padding-right:10px;
-}
-.iconblock-8 .icon {
-    float: right;
-    text-align: center;
-    position: relative;
-    top: 5px;
-    left: 5px;
-    width: 64px;
-    height: 80px;
-    background: #337AB7;
-    color: #fff;
-    transition: all .3s;
-    transform: skew(-20deg);
-    margin-left:30px;
-}
-.iconblock-8 .icon i,
-.iconblock-8 .icon img {
-    font-size: 32px;
-    height:32px;
-    width:32px;
-    color: #fff;
-    padding-top:24px;
-    z-index:1;
-    position: relative;
-    box-sizing: content-box;
-    transform: skew(20deg);
-}
-.iconblock-8:hover .icon {
-    top: 0;
-    left: 0;
-}
-.iconblock-8:hover .icon {
-    box-shadow: 8px 8px #BDE1FF;
-}
-.iconblock-8 .block {
-    overflow: hidden;
-    text-align: right;
-}
-.iconblock-8 h3 {
-    transition: all 0.7s ease 0s;
-    color: #337AB7;
-    font-size:20px;
-    margin:10px 0;
-}
-.iconblock-8:hover h3 {
-    color: #000;
-}
-
-.textcols {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.textcols-row {
-    display: table-row;
-}
-
-.textcols-item {
-    display: table-cell;
-    width: 50%;
-    vertical-align: top;
-    padding: 0;
-    border-radius: 10px;
-    background: #ff9000;
-}
-
-.image{
-    text-align: center;
-}
 
 #page-container {
     position: relative;
@@ -166,12 +51,16 @@ body{
     bottom: 0;
     width: 100%;
     height: auto;
-  }
-
-  input[type="text"] {
-    font-family: 'Montserrat', sans-serif;
 }
 
-input[type="submit"] {
-    font-family: 'Montserrat', sans-serif;
+.about-us {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.about-text, .about-img {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
 }
