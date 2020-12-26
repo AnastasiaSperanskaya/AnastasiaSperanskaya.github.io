@@ -14,41 +14,11 @@ body{
     background-size:100%;
 }
 
-.contact {
-	display: grid;
-	grid-template-columns: repeat(2,1fr);
-
-}
-
-input, select {
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255);
-}
-
-textarea {
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255);
-}
-
-input[type="text"] {
-    font-family: 'Montserrat', sans-serif;
-}
-
-input[type="submit"] {
-    font-family: 'Montserrat', sans-serif;
-}
-
-select {
-    -webkit-appearance: none;
-    font-family: 'Montserrat', sans-serif;
-
-}
-
 .main {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between, space-around;
 }
 
 .navbar {
@@ -63,7 +33,7 @@ select {
 .navbar a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -71,7 +41,7 @@ select {
 
 .navbar a:hover {
     background: #ddd;
-    /* color: black; */
+    color: black;
 }
 
 .form-group {
@@ -104,7 +74,7 @@ select {
 
 .container {
     margin: 0 auto;
-    border: 3px solid #EEEEEE;
+    border: 3px solid #967259;
     width: 800px;
     -webkit-birder-radius: 6px;
     -moz-border-radius: 6px;
@@ -131,7 +101,6 @@ p label {
 
 .name input {
     margin-top: 10px;
-    /* -webkit-text-fill-color: black; */
 }
 
 .name input {
@@ -139,7 +108,7 @@ p label {
 }
 
 .send input:hover {
-    border: 2px solid #C0C0E3;
+    border: 2px solid #967259;
 }
 
 .image{
@@ -156,18 +125,76 @@ p label {
     width: 100%;
     height: auto;
     margin-right: 0;
-  }
+}
 
-  .contact-us {
-      height: auto;
-      padding: 15px;
-      font-weight: bold;
-      text-align: center;
-  }
-
-  .outside {
+.outside {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form { max-width:420px; }
+
+.feedback-input {
+    color:#6f4e37;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border:2px solid #6f4e37;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width:100%;
+    box-sizing: border-box;
+    outline:0;
+}
+  
+.feedback-input:focus { border:2px solid #6f4e37; }
+  
+textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+  
+[type="submit"] {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background:#6f4e37;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:	#ece0d1;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+}
+[type="submit"]:hover { background:#6f4e37; }
+
+.country {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+select {
+    border: none;
+    background-color: transparent;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    font-size: 18px;
   }
+
+ ::placeholder {
+     color: #6f4e37;
+ }
+
