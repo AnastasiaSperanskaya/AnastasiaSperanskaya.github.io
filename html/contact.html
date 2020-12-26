@@ -1,117 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product</title>
-    <link rel="stylesheet" type="text/css" href="../css/contact.css">
-    <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    </head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <title>Product</title>
+      <link rel="stylesheet" type="text/css" href="../css/contact.css">
+      <link rel="stylesheet" type="text/css" href="../css/footer.css">
+  </head>
 
-<header>
-    <div class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="product.html">Product</a>
-    </div>
-</header>
+  <body>
+    <header>
+        <div class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="product.html">Product</a>
+        </div>
+    </header>
 
-<div class="main" id="page-container">
-	
-	<div class="contact-us">Contact Us</div>
-	  <div class="contact"> 
-	
-      <div id="container">
-        <form class="mainform" >
-            <p class="name">
+    <div class="main" id="page-container">
+      
+      <div class="contact-us">Contact Us</div>
+
+      <div class="outside">
+          <div style="align-self: flex-start;">
+            <form class="mainform" style="align-self: center; margin-right: 20px; border-radius: 10px;">
+              <p class="name">
                 <label for="name">Имя</label>
                 <input type="text" name="name" value="Имя автора" onblur="if(this.value.length == 0) this.value = 'Имя автора'" onfocus="if(this.value == 'Имя автора') this.value = '' "/>
-            </p>
+              </p>
 
-            <p class="email">
+              <p class="email">
                 <label for="email" >E-Mail</label>
                 <input type="text" name="email" value="name@example.com" onblur="if(this.value.length == 0) this.value = 'name@example.com'" onfocus="if(this.value == 'name@example.com') this.value = '' " />
-            </p>
+              </p>
 
-            <p>
+              <p>
                 <label for="name">Страна</label>
                 <select name="country" style="height: 22.64px;">
-                    <option type="text">Выберите страну</option>
-                    <option>Канада</option>
-                    <option>Франция</option>
-                    <option>Германия</option>
-                    <option>Италия</option>
-                    <option>Япония</option>
-                    <option>Россия</option>
-                    <option>Великобритания</option>
-                    <option>США</option>
+                  <option type="text">Выберите страну</option>
+                  <option>Канада</option>
+                  <option>Франция</option>
+                  <option>Германия</option>
+                  <option>Италия</option>
+                  <option>Япония</option>
+                  <option>Россия</option>
+                  <option>Великобритания</option>
+                  <option>США</option>
                 </select>
-            </p>
+              </p>
 
-            <p class="msg">
-                <textarea type="text" name="msg" onblur="if(this.value.length == 0) this.value = 'Текст сообщения' " onfocus="if(this.value == 'Текст сообщения') this.value=''" style="font-family: 'Montserrat', sans-serif;"> Текст сообщения </textarea>
-            </p>
-            <p class="send" >
+              <p class="msg">
+                  <textarea type="text" name="msg" onblur="if(this.value.length == 0) this.value = 'Текст сообщения' " onfocus="if(this.value == 'Текст сообщения') this.value=''" style="font-family: 'Montserrat', sans-serif;"> Текст сообщения </textarea>
+              </p>
+              <p class="send" >
                 <input type="submit" value="Отправить"/> 
-            </p>
-        </form>
+              </p>
+            </form>
+          </div>
+
+        <div class="map" style="border-radius: 10px;">
+          <iframe style="border-radius: 10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23793.987342494336!2d30.315848423262693!3d59.92455730533317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696378cc74a65ed%3A0x6dc7673fab848eff!2z0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LM!5e0!3m2!1sru!2sru!4v1608927223659!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
       </div>
+
+    </div>
       
-		  <div class="map">
-		    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23793.987342494336!2d30.315848423262693!3d59.92455730533317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696378cc74a65ed%3A0x6dc7673fab848eff!2z0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LM!5e0!3m2!1sru!2sru!4v1608927223659!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-		  </div>
+    <div class="footer" id="footer">
+      <div class="contain">
+        <div class="col">
+          <h1>Company</h1>
+            <ul>
+              <li>About</li>
+              <li>Mission</li>
+              <li>Services</li>
+              <li>Social</li>
+              <li>Get in touch</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h1>Products</h1>
+            <ul>
+              <li>About</li>
+              <li>Mission</li>
+              <li>Services</li>
+              <li>Social</li>
+              <li>Get in touch</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h1>Accounts</h1>
+            <ul>
+              <li>About</li>
+              <li>Mission</li>
+              <li>Services</li>
+              <li>Social</li>
+              <li>Get in touch</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h1>Resources</h1>
+            <ul>
+              <li>About</li>
+              <li>Mission</li>
+              <li>Services</li>
+              <li>Social</li>
+              <li>Get in touch</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h1>Support</h1>
+            <ul>
+              <li>Contact us</li>
+              <li>Web chat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  
-<div class="footer" id="footer">
-    <div class="contain">
-    <div class="col">
-      <h1>Company</h1>
-      <ul>
-        <li>About</li>
-        <li>Mission</li>
-        <li>Services</li>
-        <li>Social</li>
-        <li>Get in touch</li>
-      </ul>
-    </div>
-    <div class="col">
-      <h1>Products</h1>
-      <ul>
-        <li>About</li>
-        <li>Mission</li>
-        <li>Services</li>
-        <li>Social</li>
-        <li>Get in touch</li>
-      </ul>
-    </div>
-    <div class="col">
-      <h1>Accounts</h1>
-      <ul>
-        <li>About</li>
-        <li>Mission</li>
-        <li>Services</li>
-        <li>Social</li>
-        <li>Get in touch</li>
-      </ul>
-    </div>
-    <div class="col">
-      <h1>Resources</h1>
-      <ul>
-        <li>About</li>
-        <li>Mission</li>
-        <li>Services</li>
-        <li>Social</li>
-        <li>Get in touch</li>
-      </ul>
-    </div>
-    <div class="col">
-      <h1>Support</h1>
-      <ul>
-        <li>Contact us</li>
-        <li>Web chat</li>
-      </ul>
-    </div>
-  </div>
-  
-</body>
+
+  </body>
 </html>

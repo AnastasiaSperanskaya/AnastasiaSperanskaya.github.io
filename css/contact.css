@@ -20,12 +20,6 @@ body{
 
 }
 
-.map {
-	margin-bottom: 10px;
-    align-items: right;
-    padding-right: 30px;
-}
-
 input, select {
     border-radius: 3px;
     background-color: rgba(255, 255, 255);
@@ -52,6 +46,9 @@ select {
 
 .main {
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .navbar {
@@ -89,14 +86,10 @@ select {
 .mainform {
     height: 448px;
     display: flex;
-    flex-direction: column;
-	margin-right: 30px;
-	margin-left: 30px;	
-	/* color: black; */
+    flex-direction: column;	
 	border: 2px;
     align-items: center;
     background: rgba(99,72,50, 0.3);
-    border-radius: 10px;
 }
 
 .msg {
@@ -170,4 +163,11 @@ p label {
       padding: 15px;
       font-weight: bold;
       text-align: center;
+  }
+
+  .outside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
