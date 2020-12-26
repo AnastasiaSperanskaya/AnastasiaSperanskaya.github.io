@@ -233,3 +233,8 @@ body{
     height: 150px;
     width: auto;
   }
+
+  .best-offer {
+    align-items: center;
+    justify-content: center;
+  }
