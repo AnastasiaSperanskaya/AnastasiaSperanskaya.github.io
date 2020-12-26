@@ -198,3 +198,7 @@ select {
      color: #6f4e37;
  }
 
+ select {
+    outline: none;
+    -moz-outline: none;
+  }
