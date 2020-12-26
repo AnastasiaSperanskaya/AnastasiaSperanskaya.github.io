@@ -74,6 +74,40 @@ body{
 .items {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    width: 20%;
+    height: auto;
+}
+
+.item-img {
+    width : 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item-desc {
+    text-align: center;
+}
+
+.name {
+    font-size: 12px;
+    line-height: 18px;
+    color: #38220f;
+    margin-bottom: 0;
+}
+
+.desc {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 2px;
 }
