@@ -4,6 +4,6 @@ A project including some recieved basic CSS, JavaScript and HTML knowledge from 
 
 [Link to the task](https://github.com/AnastasiaSperanskaya/AnastasiaSperanskaya.github.io/blob/main/task/projectTask.pdf) <br />
 
-##Also you can find the whole website following this link:
+## Also you can find the whole website following this link:
 
 [Link to the website](https://AnastasiaSperanskaya.github.io) <br />
