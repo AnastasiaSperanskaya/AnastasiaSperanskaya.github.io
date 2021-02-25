@@ -6,12 +6,81 @@ html{
     font-family: 'Montserrat', sans-serif;
 }
 
-.main {
-    margin-top: 50px;
+body{
+  margin:0;
+  height:100%;
+  background-size:100%;
 }
 
-body{
-    margin:0;
-    height:100%;
-    background-size:100%;
+.wrapper{
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 4px double red;
+}
+
+.header-wrapper-item{
+  border: 4px double black;
+  width: 33.33%;
+  align-self:stretch;
+}
+
+.favourites-wrapper-item{
+  border: 4px double black;
+  align-self: stretch;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.refresh{
+  text-align: center;
+  background-color: #c9d2d7; 
+  padding: 5%; 
+  padding-top: 2%; 
+  padding-bottom: 2%; 
+  border-radius: 5px; 
+  font-size: 70%; 
+  color: #808f97;
+}
+
+.add-city{
+  margin-right: 5%;
+  text-align: left;
+  background-color: #f1f1f1; 
+  color: #808f97;
+  padding: 5%; 
+  padding-top: 2%; 
+  padding-bottom: 2%; 
+  font-size: 70%; 
+  width: 100%;
+}
+
+.add-button{
+  text-align: center;
+  background-color: #718188;
+  border-radius: 50%;
+  color: white;
+  font-size: 180%;
+  width: 39%; 
+  padding-bottom: 25%; 
+  height: 0;
+}
+
+.weather-here{
+  font-size: 150%; 
+  color: #76838a;
+}
+
+/* for every global block with weather*/
+.weather-wrapper-item{
+  border: 4px double black;
+  width: 50%;
 }
