@@ -2,41 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>weather</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- <link rel="stylesheet" href="./pictures/sun.png"> -->
 </head>
 
 <body>
     <div class="wrapper">
 
-        <div class="wrapper-item">
-            <div class="header-wrapper-item">
-                <div class="weather-here">Погода здесь</div>
-            </div>
-            <div class="header-wrapper-item" style="display: flex; justify-content: center; align-self: center;">
-                <div class="refresh"> Обновить геолокацию </div>
+        <div class="header">
+            <div class="subheading">Погода здесь</div>
+            <button type="submit" class="refresh-button">Обновить геолокацию</button>
+        </div>
+
+
+        <div class="header-city">
+            <div style="font-size: 3.5vmax; margin: 4%; margin-left: 0%; font-weight: bold; color: #78878c;">Saint Petersburg</div>
+            <div class="header-city-tempurature">
+                <img src="./img/rainy.png" class="img-header">
+                <p class="header-tempurature">8°C</p>
             </div>
         </div>
 
-        <div class="wrapper-item">
-            <div class="weather-wrapper-item">
-
-            </div>
-            <div class="weather-wrapper-item">
-
-            </div>
+        <div class="header-information">
+            <ul>
+                <li> <span>Ветер</span> <span class="light">6.0 m/s</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light">52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
         </div>
 
-        <div class="wrapper-item" style="justify-content: space-between;">
-            <div class="favourites-wrapper-item">
-                <div class="weather-here">Избранное</div>
+        <div class="break"></div>
+
+        <div class="favourites">
+            <div class="subheading">Избранное</div>
+        </div>
+
+        <div class="favourites-add-city">
+            <input type="text" placeholder="Добавить новый город" class="add-new-city">
+            <button type="submit" class="round">+</button>
+        </div>
+
+        <div class="break"></div>
+
+        <div class="city">
+            <div class="city-information">
+                <div class="city-name">Moscow</div>
+                <div class="temperature-information">5°C</div>
+                <img src="./img/sun-cloudy.png" class="img-general">
+                <button type="submit" class="round">&times;</button>
             </div>
-            <div class="favourites-wrapper-item">
-                <div class="add-city"> Добавить новый город </div>
-                <div class="add-button">+</div>
+            <ul>
+                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
+        </div>
+
+        <div class="city">
+            <div class="city-information">
+                <div class="city-name">Helsinki</div>
+                <div class="temperature-information">3°C</div>
+                <img src="./img/sun.png" class="img-general">
+                <button type="submit" class="round">&times;</button>
             </div>
+            <ul>
+                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
+        </div>
+
+        <div class="break"></div>
+
+        <div class="city">
+            <div class="city-information">
+                <div class="city-name">Moscow</div>
+                <div class="temperature-information">5°C</div>
+                <img src="./img/sun-cloudy.png" class="img-general">
+                <button type="submit" class="round">&times;</button>
+            </div>
+            <ul>
+                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
+        </div>
+
+        <div class="city">
+            <div class="city-information">
+                <div class="city-name">Helsinki</div>
+                <div class="temperature-information">3°C</div>
+                <img src="./img/sun.png" class="img-general">
+                <button type="submit" class="round">&times;</button>
+            </div>
+            <ul>
+                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
+        </div>
+
+        <div class="break"></div>
+
+        <div class="city">
+            <div class="city-information">
+                <div class="city-name">Moscow</div>
+                <div class="temperature-information">5°C</div>
+                <img src="./img/sun-cloudy.png" class="img-general">
+                <button type="submit" class="round">&times;</button>
+            </div>
+            <ul>
+                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
+        </div>
+
+        <div class="city">
+            <div class="city-information">
+                <div class="city-name">Helsinki</div>
+                <div class="temperature-information">3°C</div>
+                <img src="./img/sun.png" class="img-general">
+                <button type="submit" class="round">&times;</button>
+            </div>
+            <ul>
+                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
+                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
+                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
+                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
+                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+            </ul>
         </div>
 
     </div>
