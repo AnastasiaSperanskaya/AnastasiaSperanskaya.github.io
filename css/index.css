@@ -224,7 +224,17 @@ button {
     outline: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media all and (min-width: 375px) {
+    .subheading {
+        text-align: left;
+    }
+
+    .favourites-add-city {
+        margin-right: 2.4vmax;
+    }
+}
+
+@media all and (min-width: 1000px) {
     .header-city, .header-information, .favourites, .favourites-add-city, .city {
         flex: 1 1 0;
     }
