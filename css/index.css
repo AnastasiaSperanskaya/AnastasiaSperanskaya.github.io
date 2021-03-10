@@ -224,7 +224,7 @@ button {
     outline: none;
 }
 
-@media all and (min-width: 850px) {
+@media all and (min-width: 1500px) {
     .header-city, .header-information, .favourites, .favourites-add-city, .city {
         flex: 1 1 0;
     }
@@ -238,11 +238,11 @@ button {
     }
 }
 
-@media all and (max-width: 850px) {
+/* @media all and (max-width: 900px) {
     .favourites-add-city {
         margin-left: 1vmax;
     }
-}
+} */
 
 @media all and (min-width: 320px) {
     body {
