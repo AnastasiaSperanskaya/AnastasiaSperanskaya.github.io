@@ -224,7 +224,7 @@ button {
     outline: none;
 }
 
-@media all and (min-width: 650px) {
+@media all and (min-width: 700px) {
     .header-city, .header-information, .favourites, .favourites-add-city, .city {
         flex: 1 1 0;
     }
@@ -235,6 +235,12 @@ button {
 
     .refresh-button {
         /* margin-right: 38vmax; */
+    }
+}
+
+@media all and (max-width: 700px) {
+    .favourites-add-city {
+        margin-left: 1vmax;
     }
 }
 
