@@ -219,7 +219,7 @@ button {
 
 @media all and (min-width: 1000px) {
     .header-city, .header-information, .favourites, .favourites-add-city, .city {
-        flex: 1 1 0;
+        flex-basis: 0;
     }
 
     .favourites-add-city {
