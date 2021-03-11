@@ -230,6 +230,10 @@ button {
         margin-left: 30vmax;
     }
 
+    .refresh-button {
+        margin-right: 1%;
+    }
+
     .text-refresh {
         display: block;
         text-align: center;
