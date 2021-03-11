@@ -130,7 +130,7 @@ html{
 
 .refresh-button:active {
     background: #808f97;
-    box-shadow: 0 3vmax #808f97 inset;
+    /* box-shadow: 0 3vmax #808f97 inset; */
     color: white;
 }
 
