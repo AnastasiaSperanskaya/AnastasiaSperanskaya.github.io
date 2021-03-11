@@ -120,7 +120,6 @@ html{
 }
 
 .text-refresh-none {
-
     display: block;
     width: 3vmax;
     height: 3vmax;
@@ -130,7 +129,6 @@ html{
 
 .refresh-button:active {
     background: #808f97;
-    /* box-shadow: 0 3vmax #808f97 inset; */
     color: white;
 }
 
@@ -230,10 +228,6 @@ button {
 
     .favourites-add-city {
         margin-left: 30vmax;
-    }
-
-    .refresh-button {
-        margin-right: 1%;
     }
 
     .text-refresh {
