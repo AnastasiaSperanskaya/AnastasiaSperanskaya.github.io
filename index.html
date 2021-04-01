@@ -9,149 +9,216 @@
 </head>
 
 <body>
-    <div class="wrapper">
-
+    <header>
         <div class="wrapper-header">
-            <div class="subheading">Погода здесь</div>
+            <h1 class="subheading">Погода здесь</h1>
             <button type="submit" class="refresh-button">
                 <span class="text-refresh">Обновить геолокацию</span>
                 <img class="text-refresh-none" src="./img/refresh.png">
             </button>
         </div>
+    </header>
+    <main class="wrapper">
+        <!-- current location -->
+        <section>
+            <div class="current-location">
 
+                <div class="header-city">
+                    <h2>Saint Petersburg</h2>
+                    <div class="header-city-temperature">
+                        <img src="./img/rainy.png" class="img-header">
+                        <p class="header-temperature">8°C</p>
+                    </div>
+                </div>
 
-        <div class="header-city">
-            <div style="font-size: 3.5vmax; margin: 4%; margin-left: 0%; font-weight: bold; color: #78878c;">Saint Petersburg</div>
-            <div class="header-city-temperature">
-                <img src="./img/rainy.png" class="img-header">
-                <p class="header-temperature">8°C</p>
+                <ul class="weather-info">
+                    <li class="info-item"> 
+                        <h4>Ветер</h4> 
+                        <p class="light">Moderate breeze, 6.0 m/s, North-northwest</p> 
+                    </li>
+                    <li class="info-item"> 
+                        <h4>Облачность</h4> 
+                        <p class="light">Broken clouds</p> 
+                    </li>
+                    <li class="info-item"> 
+                        <h4>Давление</h4> 
+                        <p class="light">1013 hpa</p> 
+                    </li>
+                    <li class="info-item"> 
+                        <h4>Влажнось</h4> 
+                        <p class="light"> 52 %</p> 
+                    </li>
+                    <li class="info-item"> 
+                        <h4>Координаты</h4> 
+                        <p class="light">[59.88, 30.42]</p> 
+                    </li>
+                </ul>
+
             </div>
-        </div>
+        </section>
+        <!-- end of current location -->
 
-        <div class="header-information">
-            <ul>
-                <li> <span>Ветер</span> <span class="light">6.0 m/s</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light">52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
-            </ul>
-        </div>
+        <!-- pinned cities -->
+        <section>
+            <div class="current-location pinned">
+                <h1 class="subheading">Избранное</h1>
 
-        <div class="break"></div>
-
-        <div class="favourites">
-            <div class="subheading">Избранное</div>
-        </div>
-
-        <div class="favourites-add-city">
-            <input type="text" placeholder="Добавить новый город" class="add-new-city">
-            <button type="submit" class="round">+</button>
-        </div>
-
-        <div class="break"></div>
-
-        <div class="city">
-            <div class="city-information">
-                <div class="city-name">Moscow</div>
-                <div class="temperature-information">5°C</div>
-                <img src="./img/sun-cloudy.png" class="img-general">
-                <button type="submit" class="round">&times;</button>
+                <div class="favourites-add-city">
+                    <input type="text" placeholder="Добавить новый город" class="add-new-city">
+                    <button type="submit" class="round">+</button>
+                </div>
             </div>
-            <ul>
-                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
-            </ul>
-        </div>
 
-        <div class="city">
-            <div class="city-information">
-                <div class="city-name">Helsinki</div>
-                <div class="temperature-information">3°C</div>
-                <img src="./img/sun.png" class="img-general">
-                <button type="submit" class="round">&times;</button>
+            <!-- if there are no pinned cities yet -->
+            <div class="no-pinned">
+                <img src="" alt="">
+                <p>Вы не добавили ни одного города</p>
             </div>
-            <ul>
-                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
+
+            <ul class="pinned-list">
+                <li>
+                    <div class="card-header">
+                        <div>
+                            <h3 class="city-name">Moscow</h3> 
+                            <div class="card-header-weather">
+                                <p class="temperature-information">5°C</p>
+                                <img src="./img/sun-cloudy.png" class="img-general" alt="">
+                            </div>
+                        </div>
+                        <button type="submit" class="round">&times;</button>
+                    </div>
+                    <ul class="weather-info">
+                        <li class="info-item"> 
+                            <h4>Ветер</h4> 
+                            <p class="light">Moderate breeze, 6.0 m/s, North-northwest</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Облачность</h4> 
+                            <p class="light">Broken clouds</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Давление</h4> 
+                            <p class="light">1013 hpa</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Влажнось</h4> 
+                            <p class="light"> 52 %</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Координаты</h4> 
+                            <p class="light">[59.88, 30.42]</p> 
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div class="card-header">
+                        <div>
+                            <h3 class="city-name">Moscow</h3> 
+                            <div class="card-header-weather">
+                                <p class="temperature-information">5°C</p>
+                                <img src="./img/sun-cloudy.png" class="img-general" alt="">
+                            </div>
+                        </div>
+                        <button type="submit" class="round">&times;</button>
+                    </div>
+                    <ul class="weather-info">
+                        <li class="info-item"> 
+                            <h4>Ветер</h4> 
+                            <p class="light">Moderate breeze, 6.0 m/s, North-northwest</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Облачность</h4> 
+                            <p class="light">Broken clouds</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Давление</h4> 
+                            <p class="light">1013 hpa</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Влажнось</h4> 
+                            <p class="light"> 52 %</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Координаты</h4> 
+                            <p class="light">[59.88, 30.42]</p> 
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div class="card-header">
+                        <div>
+                            <h3 class="city-name">Moscow</h3> 
+                            <div class="card-header-weather">
+                                <p class="temperature-information">5°C</p>
+                                <img src="./img/sun-cloudy.png" class="img-general" alt="">
+                            </div>
+                        </div>
+                        <button type="submit" class="round">&times;</button>
+                    </div>
+                    <ul class="weather-info">
+                        <li class="info-item"> 
+                            <h4>Ветер</h4> 
+                            <p class="light">Moderate breeze, 6.0 m/s, North-northwest</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Облачность</h4> 
+                            <p class="light">Broken clouds</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Давление</h4> 
+                            <p class="light">1013 hpa</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Влажнось</h4> 
+                            <p class="light"> 52 %</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Координаты</h4> 
+                            <p class="light">[59.88, 30.42]</p> 
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div class="card-header">
+                        <div>
+                            <h3 class="city-name">Moscow</h3> 
+                            <div class="card-header-weather">
+                                <p class="temperature-information">5°C</p>
+                                <img src="./img/sun-cloudy.png" class="img-general" alt="">
+                            </div>
+                        </div>
+                        <button type="submit" class="round">&times;</button>
+                    </div>
+                    <ul class="weather-info">
+                        <li class="info-item"> 
+                            <h4>Ветер</h4> 
+                            <p class="light">Moderate breeze, 6.0 m/s, North-northwest</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Облачность</h4> 
+                            <p class="light">Broken clouds</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Давление</h4> 
+                            <p class="light">1013 hpa</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Влажнось</h4> 
+                            <p class="light"> 52 %</p> 
+                        </li>
+                        <li class="info-item"> 
+                            <h4>Координаты</h4> 
+                            <p class="light">[59.88, 30.42]</p> 
+                        </li>
+                    </ul>
+                </li>
             </ul>
-        </div>
-
-        <div class="break"></div>
-
-        <div class="city">
-            <div class="city-information">
-                <div class="city-name">Moscow</div>
-                <div class="temperature-information">5°C</div>
-                <img src="./img/sun-cloudy.png" class="img-general">
-                <button type="submit" class="round">&times;</button>
-            </div>
-            <ul>
-                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
-            </ul>
-        </div>
-
-        <div class="city">
-            <div class="city-information">
-                <div class="city-name">Helsinki</div>
-                <div class="temperature-information">3°C</div>
-                <img src="./img/sun.png" class="img-general">
-                <button type="submit" class="round">&times;</button>
-            </div>
-            <ul>
-                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
-            </ul>
-        </div>
-
-        <div class="break"></div>
-
-        <div class="city">
-            <div class="city-information">
-                <div class="city-name">Moscow</div>
-                <div class="temperature-information">5°C</div>
-                <img src="./img/sun-cloudy.png" class="img-general">
-                <button type="submit" class="round">&times;</button>
-            </div>
-            <ul>
-                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
-            </ul>
-        </div>
-
-        <div class="city">
-            <div class="city-information">
-                <div class="city-name">Helsinki</div>
-                <div class="temperature-information">3°C</div>
-                <img src="./img/sun.png" class="img-general">
-                <button type="submit" class="round">&times;</button>
-            </div>
-            <ul>
-                <li> <span>Ветер</span> <span class="light">Moderate breeze, 6.0 m/s, North-northwest</span> </li>
-                <li> <span>Облачность</span> <span class="light">Broken clouds</span> </li>
-                <li> <span>Давление</span> <span class="light">1013 hpa</span> </li>
-                <li> <span>Влажнось</span> <span class="light"> 52 %</span> </li>
-                <li> <span>Координаты</span> <span class="light">[59.88, 30.42]</span> </li>
-            </ul>
-        </div>
-
-    </div>
+        </section>
+        <!-- end of pinned cities -->
+    </main>
 </body>
 
 </html>
