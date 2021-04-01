@@ -1,0 +1,50 @@
+@media all and (min-width: 320px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@media all and (min-width: 375px) {
+    .subheading {
+        text-align: left;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    .header-city, .header-information, .favourites, .favourites-add-city, .city {
+        flex-basis: 0;
+    }
+
+    .current-location {
+        display: grid;
+	    grid-template-columns: repeat(2, 1fr);
+	    gap: 15px 30px;
+    }
+
+    .favourites-add-city {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .text-refresh {
+        display: block;
+        text-align: center;
+        border: none;
+        width: 20vmax;
+        height: 100%;
+        font-size: 1.3vmax; 
+        color: #808f97;
+        padding-top: 2%;
+    }
+
+    .text-refresh-none {
+        display: none;
+    }
+
+    .pinned-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}

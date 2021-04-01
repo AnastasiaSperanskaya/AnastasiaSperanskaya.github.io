@@ -1,18 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, h1, h2, h3, h4, img, i, ul, li, form, label, legend,
+table, caption, article, footer, header, hgroup, 
+menu, nav, section {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -21,7 +11,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-ol, ul {
+ul {
 	list-style: none;
 }
 
@@ -68,30 +58,6 @@ html{
     height: 12vmax;
 }
 
-.header-information {
-    height: 25vmax;
-    width: 25vmax;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.break {
-    flex-basis: 100%;
-    height: 0;
-    margin: 0;
-    padding: 0;
-}
-
-.favourites {
-    height: 5vmax;
-    width: 25vmax;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 .favourites-add-city {
     height: 5vmax;
     display: flex;
@@ -113,21 +79,10 @@ html{
     margin-top: 3vmax;
     height: 30vmax;
     width: 30vmax;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.city-information {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 7vmax;
-    width: 100%;
-    padding-right: 3%;
 }
 
 .refresh-button {
@@ -240,57 +195,6 @@ button {
     padding: 0;
     border: none;
     outline: none;
-}
-
-@media all and (min-width: 375px) {
-    .subheading {
-        text-align: left;
-    }
-}
-
-@media all and (min-width: 1000px) {
-    .header-city, .header-information, .favourites, .favourites-add-city, .city {
-        flex-basis: 0;
-    }
-
-    .current-location {
-        display: grid;
-	    grid-template-columns: repeat(2, 1fr);
-	    gap: 15px 30px;
-    }
-
-    .favourites-add-city {
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .text-refresh {
-        display: block;
-        text-align: center;
-        border: none;
-        width: 20vmax;
-        height: 100%;
-        font-size: 1.3vmax; 
-        color: #808f97;
-        padding-top: 2%;
-    }
-
-    .text-refresh-none {
-        display: none;
-    }
-
-    .pinned-list{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-@media all and (min-width: 320px) {
-    body {
-        overflow-x: hidden;
-    }
 }
 
 h2 {
