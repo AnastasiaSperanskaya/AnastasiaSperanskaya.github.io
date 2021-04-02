@@ -160,7 +160,7 @@ html{
 }
 
 .city-name {
-    font-size: 3vmax;
+    font-size: 2vmax;
     font-weight: bold; 
     color: #78878c;
     margin-right: 10%;
@@ -220,18 +220,33 @@ h4 {
     margin-bottom: 3%;
 }
 
-.card-header{
+.pinned-template-header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.card-header>div{
+.pinned-template-header>div{
 	display: inherit;
 	align-items: center;
 }
 
-.card-header-weather{
+.pinned-template-header-weather{
 	display: flex;
     align-items: center;
+}
+
+.loading-window {
+    width: 100%;
+    text-align: center;
+    margin: 3%;
+}
+
+.loading-window img {
+    width: 10vmax;
+    height: 10vmax;
+}
+
+.width100 {
+    width: 100%;
 }
