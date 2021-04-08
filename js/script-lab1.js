@@ -1,9 +1,4 @@
-const queryPattern = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=';
-const rapidapiKey = '5ea1a7bba0mshb4b5ef34560e186p1b62cbjsn45061317a9f6';
-const rapidapiHost = 'weatherapi-com.p.rapidapi.com';
-const defaultCity = localStorage['default-city'];
-
-function report2Params(weatherReportList) {
+function convertParameters(weatherReportList) {
     const keys = ['wind', 'cloud', 'press', 'humidity', 'coords'];
     const items = weatherReportList.querySelectorAll('p');
     const params = {};
@@ -13,7 +8,7 @@ function report2Params(weatherReportList) {
     return params;
   }
 
-function initStorage() {
+function setStorage() {
     const defaultCities = ['Moscow', 'Saint-Petersburg'];
   
     if (localStorage.getItem('cities') === null) {
@@ -22,20 +17,20 @@ function initStorage() {
     if (localStorage.getItem('default-city') === null) localStorage['default-city'] = 'Moscow';
   }
 
-async function getWeatherJSON(cityOrCoords) {
-    const query = queryPattern + cityOrCoords;
+async function getJSONWeatherInfo(cityOrCoords) {
+    const query = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=' + cityOrCoords;
     const response = await fetch(query, {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': rapidapiKey,
-        'x-rapidapi-host': rapidapiHost,
+        'x-rapidapi-key': 'ecb458bdedmsh3cfe23073821bc9p1442dbjsn08522e24b70a',
+        'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
       },
     });
     return response.json();
   }
 
-async function fillReport(cityOrCoords, reportFields) {
-    const weather = await getWeatherJSON(cityOrCoords);
+async function writeCurrentWeatherInfo(cityOrCoords, reportFields) {
+    const weather = await getJSONWeatherInfo(cityOrCoords);
     const { current } = weather;
     const { location } = weather;
     const report = reportFields;
@@ -65,31 +60,31 @@ function loadData(parentNode, loadingNodeSelector, loadFunction, delay) {
     }, delay);
 }
   
-function enableCurrent() {
+function setCurrentCityWeather() {
     const parentNode = document.querySelectorAll('section')[0];
     loadData(parentNode, '.current-location', () => {
-      const params = report2Params(document.querySelector('.weather-info'));
+      const params = convertParameters(document.querySelector('.weather-info'));
       params.temp = document.querySelector('p');
       params.icon = document.querySelector('.img-header');
       params.city = document.querySelector('h2');
   
       navigator.geolocation.getCurrentPosition(async (position) => {
         const query = `${position.coords.latitude},${position.coords.longitude}`;
-        await fillReport(query, params);
-      }, async () => { await fillReport(defaultCity, params); });
+        await writeCurrentWeatherInfo(query, params);
+      });
     }, 500);
 }
 
 async function addPinnedCity(CityName) {
     const template = document.querySelector('#pinned-template');
   
-    const placeParams = report2Params(template.content.querySelector('.weather-info'));
+    const placeParams = convertParameters(template.content.querySelector('.weather-info'));
     placeParams.temp = template.content.querySelector('p');
     placeParams.icon = template.content.querySelector('img');
     placeParams.template = template;
     placeParams.city = template.content.querySelector('h3');
   
-    await fillReport(CityName, placeParams);
+    await writeCurrentWeatherInfo(CityName, placeParams);
   
     const pinnedList = document.querySelector('.pinned-list');
     const clone = template.content.querySelector('li').cloneNode(true);
@@ -110,7 +105,7 @@ async function addPinnedCity(CityName) {
   
 function setEventsOnButtonClick() {
     const refreashCurrentBtn = document.querySelector('.refresh-button');
-    refreashCurrentBtn.onclick = () => { enableCurrent(); };
+    refreashCurrentBtn.onclick = () => { setCurrentCityWeather(); };
   
     const form = document.querySelector('form');
     form.onsubmit = async (evt) => {
@@ -152,7 +147,7 @@ function loadPinnedCities() {
     }, 1000);
 }
   
-initStorage();
-enableCurrent();
+setStorage();
+setCurrentCityWeather(); 
 loadPinnedCities();
 setEventsOnButtonClick();
