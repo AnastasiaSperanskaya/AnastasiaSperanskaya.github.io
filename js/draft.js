@@ -8,38 +8,38 @@ function convertParameters(weatherReportList) {
   return params;
 }
 
+async function getJSONWeatherInfo(cityOrCoords) {
+    const query = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=' + cityOrCoords;
+    const response = await fetch(query, {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': 'ecb458bdedmsh3cfe23073821bc9p1442dbjsn08522e24b70a',
+        'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+      },
+    });
+    return response.json();
+}
+
+async function writeCurrentWeatherInfo(cityOrCoords, reportFields) {
+    const weather = await getJSONWeatherInfo(cityOrCoords);
+    const { current, location } = weather;
+    const report = reportFields;
+  
+    report.temp.textContent = `${Math.round(current.temp_c)}°C`;
+    report.wind.textContent = `${current.wind_mph} m/s, ${current.wind_dir}`;
+    report.cloud.textContent = `${current.cloud} %`;
+    report.press.textContent = `${current.pressure_mb} hpa`;
+    report.humidity.textContent = `${current.humidity} %`;
+    report.coords.textContent = `[ ${location.lat}, ${location.lon} ]`;
+    report.icon.src = current.condition.icon.replace(/64x64/i, '128x128');
+    report.city.textContent = location.name;
+}
+
 function setStorage() {
   const defaultCities = [['55.75;37.62','Moscow'], ['59.89;30.26','Saint-Petersburg']];
 
   if (localStorage.getItem('cities') === null) localStorage.cities = JSON.stringify(defaultCities);
   if (localStorage.getItem('default-city') === null) localStorage['default-city'] = 'Moscow';
-}
-
-async function getJSONWeatherInfo(cityOrCoords) {
-  const query = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=' + cityOrCoords;
-  const response = await fetch(query, {
-    method: 'GET',
-    headers: {
-      'x-rapidapi-key': 'ecb458bdedmsh3cfe23073821bc9p1442dbjsn08522e24b70a',
-      'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
-    },
-  });
-  return response.json();
-}
-
-async function writeCurrentWeatherInfo(cityOrCoords, reportFields) {
-  const weather = await getJSONWeatherInfo(cityOrCoords);
-  const { current, location } = weather;
-  const report = reportFields;
-
-  report.temp.textContent = `${Math.round(current.temp_c)}°C`;
-  report.wind.textContent = `${current.wind_mph} m/s, ${current.wind_dir}`;
-  report.cloud.textContent = `${current.cloud} %`;
-  report.press.textContent = `${current.pressure_mb} hpa`;
-  report.humidity.textContent = `${current.humidity} %`;
-  report.coords.textContent = `[ ${location.lat}, ${location.lon} ]`;
-  report.icon.src = current.condition.icon.replace(/64x64/i, '128x128');
-  report.city.textContent = location.name;
 }
 
 function loadData(parentNode, loadingNodeSelector, loadFunction, delay) {
@@ -60,6 +60,23 @@ function loadData(parentNode, loadingNodeSelector, loadFunction, delay) {
 
 const currParams = convertParameters(document.querySelector('.weather-info'));
 
+var options = {
+    timeout: 300,
+};
+  
+  function success(pos) {
+    var crd = pos.coords;
+    const query = `${crd.latitude},${crd.longitude}`;
+    writeCurrentWeatherInfo(query, currParams);
+};
+  
+function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    if (err.code === 1 || err.code === 2 || err.code === 3) {
+      writeCurrentWeatherInfo(localStorage['default-city'], currParams);
+    } 
+};
+
 function setCurrentCityWeather() {
   const parentNode = document.querySelectorAll('section')[0];
 
@@ -71,23 +88,6 @@ function setCurrentCityWeather() {
     navigator.geolocation.getCurrentPosition(success, error, options);
   }, options.timeout * 2);
 }
-
-var options = {
-  timeout: 300,
-};
-
-function success(pos) {
-  var crd = pos.coords;
-  const query = `${crd.latitude},${crd.longitude}`;
-  writeCurrentWeatherInfo(query, currParams);
-};
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-  if (err.code === 1 || err.code === 2 || err.code === 3) {
-    writeCurrentWeatherInfo(localStorage['default-city'], currParams);
-  } 
-};
 
 async function addPinnedCity(cityName, key) {
   const template = document.querySelector('#pinned-template');
@@ -115,6 +115,34 @@ async function addPinnedCity(cityName, key) {
       document.querySelector('.no-pinned').style.display = 'block';
     } 
   };
+}
+
+function loadPinnedCities() {
+    const parent = document.querySelectorAll('section')[1];
+  
+    loadData(parent, '.pinned-list', async () => {
+      let map;
+      try {
+        map = new Map(JSON.parse(localStorage.cities));
+      } catch (error) {
+        localStorage.clear();
+        setStorage();
+        map = new Map(JSON.parse(localStorage.cities));
+      }
+      const data = [...map];
+  
+      data.forEach((pair) => {
+        addPinnedCity(pair[1], pair[0]);
+        console.log(pair + '\n');
+      });
+  
+      //promise.all somewhere here
+      // await Promise.all(data).then(data.forEach((pair) => {addPinnedCity(pair[1], pair[0])}));
+  
+      if (JSON.parse(localStorage.cities).length === 0) {
+        document.querySelector('.no-pinned').style.display = 'block';
+      }
+    }, 1000);
 }
 
 function setEventsOnButtonClick() {
@@ -150,37 +178,9 @@ function setEventsOnButtonClick() {
   };
 }
 
-function loadPinnedCities() {
-  const parent = document.querySelectorAll('section')[1];
-
-  loadData(parent, '.pinned-list', async () => {
-    let map;
-    try {
-      map = new Map(JSON.parse(localStorage.cities));
-    } catch (error) {
-      localStorage.clear();
-      setStorage();
-      map = new Map(JSON.parse(localStorage.cities));
-    }
-    const data = [...map];
-
-    data.forEach((pair) => {
-      addPinnedCity(pair[1], pair[0]);
-      console.log(pair + '\n');
-    });
-
-    //promise.all somewhere here
-    // await Promise.all(data).then(data.forEach((pair) => {addPinnedCity(pair[1], pair[0])}));
-
-    if (JSON.parse(localStorage.cities).length === 0) {
-      document.querySelector('.no-pinned').style.display = 'block';
-    }
-  }, 1000);
-}
-
-// setStorage();
-// setCurrentCityWeather(); 
-// loadPinnedCities();
-// setEventsOnButtonClick();
-// const data = [localStorage.cities];
-// data.forEach((city) => {console.log(city + '\n')});
+setStorage();
+setCurrentCityWeather(); 
+loadPinnedCities();
+setEventsOnButtonClick();
+const data = [localStorage.cities];
+data.forEach((city) => {console.log(city + '\n')});

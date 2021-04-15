@@ -1,3 +1,9 @@
+const currParams = convertParameters(document.querySelector('.weather-info'));
+
+var options = {
+  timeout: 300,
+};
+
 function success(pos) {
     var crd = pos.coords;
     const query = `${crd.latitude},${crd.longitude}`;
