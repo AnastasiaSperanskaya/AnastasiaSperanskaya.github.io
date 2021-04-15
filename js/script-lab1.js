@@ -9,7 +9,7 @@ function convertParameters(weatherReportList) {
 }
 
 function setStorage() {
-  const defaultCities = ['Moscow', 'Saint-Petersburg'];
+  const defaultCities = [['55.75;37.62','Moscow'], ['59.89;30.26','Saint-Petersburg']];
 
   if (localStorage.getItem('cities') === null) localStorage.cities = JSON.stringify(defaultCities);
   if (localStorage.getItem('default-city') === null) localStorage['default-city'] = 'Moscow';
@@ -69,11 +69,11 @@ function setCurrentCityWeather() {
     currParams.city = document.querySelector('h2');
 
     navigator.geolocation.getCurrentPosition(success, error, options);
-  }, 500);
+  }, options.timeout * 2);
 }
 
 var options = {
-  timeout: 3000,
+  timeout: 300,
 };
 
 function success(pos) {
@@ -89,7 +89,7 @@ function error(err) {
   } 
 };
 
-async function addPinnedCity(cityName) {
+async function addPinnedCity(cityName, key) {
   const template = document.querySelector('#pinned-template');
   const placeParams = convertParameters(template.content.querySelector('.weather-info'));
 
@@ -107,8 +107,8 @@ async function addPinnedCity(cityName) {
   clone.querySelector('button').onclick = () => {
     pinnedList.removeChild(clone);
 
-    const pinnedCities = new Set(JSON.parse(localStorage.cities));
-    pinnedCities.delete(cityName);
+    const pinnedCities = new Map(JSON.parse(localStorage.cities));
+    pinnedCities.delete(key);
     localStorage.cities = JSON.stringify([...pinnedCities]);
 
     if ([...pinnedCities].length === 0) {
@@ -132,12 +132,16 @@ function setEventsOnButtonClick() {
 
     if (newCity !== '') {
       try {
-        const pinnedCities = new Set(JSON.parse(localStorage.cities));
-        if (!pinnedCities.has(newCity)) {
-          await addPinnedCity(newCity);
-          pinnedCities.add(newCity);
+        const weather = await getJSONWeatherInfo(newCity);
+        const key = weather.location.lat + ';' + weather.location.lon;
+        const pinnedCities = new Map(JSON.parse(localStorage.cities));
+        if (!pinnedCities.has(key)) {
+          await addPinnedCity(newCity, key);
+          pinnedCities.set(key, newCity);
           localStorage.cities = JSON.stringify([...pinnedCities]);
           document.querySelector('.no-pinned').style.display = 'none';
+        } else if (pinnedCities.has(key)) {
+          window.alert(`Город ${newCity} уже добавлен!`);
         }
       } catch (err) {
         window.alert(`Город ${newCity} не найден!`);
@@ -150,9 +154,23 @@ function loadPinnedCities() {
   const parent = document.querySelectorAll('section')[1];
 
   loadData(parent, '.pinned-list', async () => {
-    const set = new Set(JSON.parse(localStorage.cities));
-    const data = [...set];
-    data.forEach((city) => { addPinnedCity(city); });
+    let map;
+    try {
+      map = new Map(JSON.parse(localStorage.cities));
+    } catch (error) {
+      localStorage.clear();
+      setStorage();
+      map = new Map(JSON.parse(localStorage.cities));
+    }
+    const data = [...map];
+
+    data.forEach((pair) => {
+      addPinnedCity(pair[1], pair[0]);
+      console.log(pair + '\n');
+    });
+
+    //promise.all somewhere here
+    // await Promise.all(data).then(data.forEach((pair) => {addPinnedCity(pair[1], pair[0])}));
 
     if (JSON.parse(localStorage.cities).length === 0) {
       document.querySelector('.no-pinned').style.display = 'block';
@@ -164,3 +182,5 @@ setStorage();
 setCurrentCityWeather(); 
 loadPinnedCities();
 setEventsOnButtonClick();
+const data = [localStorage.cities];
+data.forEach((city) => {console.log(city + '\n')});
