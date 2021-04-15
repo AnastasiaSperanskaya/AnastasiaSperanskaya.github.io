@@ -178,9 +178,9 @@ function loadPinnedCities() {
   }, 1000);
 }
 
-setStorage();
-setCurrentCityWeather(); 
-loadPinnedCities();
-setEventsOnButtonClick();
-const data = [localStorage.cities];
-data.forEach((city) => {console.log(city + '\n')});
+// setStorage();
+// setCurrentCityWeather(); 
+// loadPinnedCities();
+// setEventsOnButtonClick();
+// const data = [localStorage.cities];
+// data.forEach((city) => {console.log(city + '\n')});
