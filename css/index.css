@@ -24,13 +24,13 @@ html{
     padding: 2%;
 }
 
-.wrapper {
+main {
     display: flex;
     flex-flow: row wrap;
     text-align: center;
 }
 
-.wrapper > * {
+main > * {
     flex: 1 100%;
 }
 
@@ -149,7 +149,7 @@ html{
     width: 100%;
 }
 
-.info-item {
+ul.weather-info > li {
     padding: 1.5%;
     display: flex;
     justify-content: space-between;

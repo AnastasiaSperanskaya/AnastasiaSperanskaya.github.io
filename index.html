@@ -10,20 +10,17 @@
     </head>
 
     <body>
-        <header>
-            <div class="wrapper-header">
-                <h1 class="subheading">Погода здесь</h1>
-                <button type="submit" class="refresh-button">
-                    <span class="text-refresh">Обновить геолокацию</span>
-                    <img class="text-refresh-none" src="./img/refresh.png">
-                </button>
-            </div>
+        <header class="wrapper-header">
+            <h1 class="subheading">Погода здесь</h1>
+            <button type="submit" class="refresh-button">
+                <span class="text-refresh">Обновить геолокацию</span>
+                <img class="text-refresh-none" src="./img/refresh.png">
+            </button>
         </header>
-        <main class="wrapper">
+        <main>
             <!-- current location -->
             <section>
                 <div class="current-location">
-
                     <div class="header-city">
                         <h2></h2>
                         <div class="header-city-temperature">
@@ -33,28 +30,27 @@
                     </div>
 
                     <ul class="weather-info">
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Ветер</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Облачность</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Давление</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Влажнось</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Координаты</h4> 
                             <p class="light"></p> 
                         </li>
                     </ul>
-
                 </div>
             </section>
             <!-- end of current location -->
@@ -101,23 +97,23 @@
                         <button type="submit" class="round">&times;</button>
                     </div>
                     <ul class="weather-info">
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Ветер</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Облачность</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Давление</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Влажнось</h4> 
                             <p class="light"></p> 
                         </li>
-                        <li class="info-item"> 
+                        <li> 
                             <h4>Координаты</h4> 
                             <p class="light"></p> 
                         </li>
@@ -127,5 +123,6 @@
 
         </main>
     </body>
-    <script src="./js/script-lab1.js"></script>
+    <script type="module" src="./js/script-lab1.js"></script>
+    <script type="module" src="./js/run.js"></script>
 </html>
