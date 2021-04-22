@@ -14,8 +14,8 @@ async function addPinnedCity(cityName, key) {
     await writeCurrentWeatherInfo(cityName, placeParams);
     const pinnedList = document.querySelector('.pinned-list');
     const clone = template.content.querySelector('li').cloneNode(true);
-  
-    pinnedList.appendChild(clone);
+
+    await pinnedList.appendChild(clone);
 
     console.log(cityName);
 

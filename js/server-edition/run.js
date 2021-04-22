@@ -1,0 +1,3 @@
+setCurrentCityWeather();
+loadPinnedCities();
+setEventsOnButtonClick();
